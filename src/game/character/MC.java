@@ -15,9 +15,7 @@ public class MC extends Character{
         this.locationNow = locationNow;
     }
 
-    //    public static MC createMC() {
-//        return new MC();
-//    }
+
 
 
 }

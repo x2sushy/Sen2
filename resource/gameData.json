@@ -4,6 +4,7 @@
       "id": "paseka",
       "name": "Paseka",
       "characters": ["herold"],
+      "loot" : null,
       "up": null,
       "down": null,
       "left": "tajemnyLes",
@@ -13,6 +14,7 @@
       "id": "skalnateHory",
       "name": "Skalnaté Hory",
       "characters": ["enemy1"],
+      "loot": ["basicSword1", "basicArmor1", "potion"],
       "up": "pekelneUdoli",
       "down": null,
       "left": "paseka",
@@ -22,6 +24,7 @@
       "id": "kopcoviteVrchy",
       "name": "Kopcovité Vrchy",
       "characters": ["enemy2", "enemy3", "enemy4"],
+      "loot": ["basicSword2", "basicArmor2", "potion"],
       "up": null,
       "down": null,
       "left": "skalnateHory",
@@ -31,6 +34,7 @@
       "id": "tajemnyLes",
       "name": "Tajemný Les",
       "characters": ["enemy5", "enemy6"],
+      "loot": ["basicSword3", "basicArmor3", "potion"],
       "up": null,
       "down": null,
       "left": "kronosovoSidlo",
@@ -40,6 +44,7 @@
       "id": "kronosovoSidlo",
       "name": "Kronosovo Sídlo",
       "characters": ["kronos", "enemy7", "enemy8", "enemy9"],
+      "loot": ["magicWand", "betterArmor", "curse"],
       "up": null,
       "down": "francovaJeskyne",
       "left": null,
@@ -49,6 +54,7 @@
       "id": "francovaJeskyne",
       "name": "Francova Jeskyně",
       "characters": ["franc"],
+      "loot" : null,
       "up": "kronosovoSidlo",
       "down": null,
       "left": null,
@@ -57,7 +63,8 @@
     "pekelneUdoli": {
       "id": "pekelneUdoli",
       "name": "Pekelné Údolí",
-      "characters": [],
+      "characters": null,
+      "loot" : null,
       "up": null,
       "down": "skalnateHory",
       "left": null,
@@ -67,6 +74,7 @@
       "id": "princezninPalac",
       "name": "Princeznin Palác",
       "characters": ["princezna"],
+      "loot" : null,
       "up": null,
       "down": null,
       "left": "kopcoviteVrchy",
@@ -85,7 +93,7 @@
     "enemy9": { "id": "enemy9", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"] },
     "herold": { "id": "herold", "name": "Herold", "health": 100, "isFriendly": true, "loot": ["basicSword1", "basicArmor1", "potion"] },
     "franc": { "id": "franc", "name": "Franc", "health": 150, "isFriendly": true, "loot": ["betterSword", "betterArmor", "potion"] },
-    "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": [] },
+    "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": null },
     "kronos": { "id": "kronos", "name": "Kronos", "health": 100, "isFriendly": false, "loot": ["magicWand", "betterArmor", "potion", "curse"] }
   },
   "items": {
@@ -108,6 +116,6 @@
     "name": "Hrdina",
     "health": 100,
     "locationNow": "paseka",
-    "inventory": ["magicWand", "betterArmor", "potion", "curse"]
+    "loot": ["magicWand", "betterArmor", "potion", "curse"]
   }
 }

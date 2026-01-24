@@ -1,0 +1,9 @@
+w - jdi nahoru
+a - jdi doleva
+s - jdi dolu
+d - jdi doprava
+l - ukonči hru
+h - výpis všech příkazů
+q - dialog
+e - sebrání itemů
+i - otevření inventáře

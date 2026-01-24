@@ -18,8 +18,11 @@ public class Game {
         commandManager.registerCommand('s', new DownCommand(data.getPlayer(), data));
         commandManager.registerCommand('d', new RightCommand(data.getPlayer(), data));
         commandManager.registerCommand('l', new ExitCommand());
-
+        commandManager.registerCommand('h', new HelpCommand());
+        commandManager.registerCommand('i', new InventoryCommand(data.getPlayer()));
+        commandManager.registerCommand('e', new PickUpCommand(data.getPlayer(), data));
     }
+    //todo při vypisování itemu lokací a vseho z jsonu vypisovat jmeno a ne id
 
     public void run(){
         boolean exit = false;

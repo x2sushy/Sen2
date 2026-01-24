@@ -8,6 +8,7 @@ public class Location {
     private String id;
     private String name;
     private ArrayList<String> characters;
+    private ArrayList<String> loot;
     private String up;
     private String down;
     private String left;
@@ -70,5 +71,13 @@ public class Location {
 
     public void setRight(String right) {
         this.right = right;
+    }
+
+    public ArrayList<String> getLoot() {
+        return loot;
+    }
+
+    public void setLoot(ArrayList<String> loot) {
+        this.loot = loot;
     }
 }

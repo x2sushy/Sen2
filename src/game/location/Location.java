@@ -1,6 +1,10 @@
 package game.location;
 
 
+import game.character.SC;
+import game.gamedata.GameData;
+import game.items.Item;
+
 import java.util.ArrayList;
 
 public class Location {
@@ -13,8 +17,29 @@ public class Location {
     private String down;
     private String left;
     private String right;
+    private ArrayList<SC> scs;
+    private ArrayList<Item> items;
+    private GameData gameData;
 
     public Location() {
+    }
+
+    public void setScs() {
+        if(characters == null){
+            characters = new ArrayList<>();
+        }
+        for(String chrId:characters){
+            // todo scs.add(gameData.getSC(chrId));
+        }
+    }
+
+    public void setItems() {
+        if(loot == null){
+            loot = new ArrayList<>();
+        }
+        for(String itmId:loot){
+            items.add(gameData.getItem(itmId));
+        }
     }
 
     public String getId() {
@@ -79,5 +104,21 @@ public class Location {
 
     public void setLoot(ArrayList<String> loot) {
         this.loot = loot;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+
+    public ArrayList<SC> getScs() {
+        return scs;
+    }
+
+    public void setScs(ArrayList<SC> scs) {
+        this.scs = scs;
     }
 }

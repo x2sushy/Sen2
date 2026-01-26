@@ -66,6 +66,22 @@ public class GameData {
         throw new IllegalArgumentException("Neexistuje lokace s id: " + id);
     }
 
+    public Item getItem(String id) {
+        Item item = items.get(id);
+        if(item==null) {
+            throw new NullPointerException("žádný item nemá toto id");
+        }
+        return item;
+    }
+
+    public SC getSC(String id) {
+        SC sc = sideCharacters.get(id);
+        if(sc == null) {
+            throw new NullPointerException("žádný charakter neodpovídá tomuto id");
+        }
+        return sc;
+    }
+
     public HashMap<String, Item> getItems() {
         return items;
     }

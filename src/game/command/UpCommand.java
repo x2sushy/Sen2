@@ -19,7 +19,7 @@ public class UpCommand implements Command {
         Location l = data.findLocation(player.getLocationNow());
         if(l.getUp() != null){
             player.setLocationNow(l.getUp());
-            return "vešel jsi do lokace: " + player.getLocationNow();
+            return "vešel jsi do lokace: " + data.findLocation(player.getLocationNow()).getName();
         }else{
             return "tady nemůžeš jít";
         }

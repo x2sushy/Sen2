@@ -18,7 +18,7 @@ public class LeftCommand implements Command {
         Location l = data.findLocation(player.getLocationNow());
         if(l.getLeft() != null){
             player.setLocationNow(l.getLeft());
-            return "vešel jsi do lokace: " + player.getLocationNow();
+            return "vešel jsi do lokace: " + data.findLocation(player.getLocationNow()).getName();
         }else{
             return "tady nemůžeš jít";
         }

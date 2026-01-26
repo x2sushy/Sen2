@@ -19,7 +19,7 @@ public class RightCommand implements Command {
         Location l = data.findLocation(player.getLocationNow());
         if(l.getRight() != null){
             player.setLocationNow(l.getRight());
-            return "vešel jsi do lokace: " + player.getLocationNow();
+            return "vešel jsi do lokace: " + data.findLocation(player.getLocationNow()).getName();
         }else{
             return "tady nemůžeš jít";
         }

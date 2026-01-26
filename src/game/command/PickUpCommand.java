@@ -15,11 +15,12 @@ public class PickUpCommand implements Command {
         this.player = player;
         this.gameData = gameData;
     }
-    //todo odstran item po sebrani z lokace
+
     @Override
     public String execute() {
         String temp = "";
         boolean x = true;
+        String temp2 = "nic";
         if (gameData.findLocation(player.getLocationNow()).getLoot() != null) {
             while (x) {
                 System.out.println(gameData.findLocation(player.getLocationNow()).getLoot());
@@ -28,14 +29,20 @@ public class PickUpCommand implements Command {
                     case 1 -> {
                         temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getLoot().getFirst());
                         x = false;
+                        gameData.findLocation(player.getLocationNow()).getLoot().removeFirst();
+                        gameData.findLocation(player.getLocationNow()).getLoot().addFirst(temp2);
                     }
                     case 2 -> {
                         temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getLoot().get(1));
                         x = false;
+                        gameData.findLocation(player.getLocationNow()).getLoot().remove(1);
+                        gameData.findLocation(player.getLocationNow()).getLoot().add(1, temp2);
                     }
                     case 3 -> {
                         temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getLoot().getLast());
                         x = false;
+                        gameData.findLocation(player.getLocationNow()).getLoot().removeLast();
+                        gameData.findLocation(player.getLocationNow()).getLoot().addLast(temp2);
                     }
                     case 4 -> {
                         temp = "nic sis nevzal";

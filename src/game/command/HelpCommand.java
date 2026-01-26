@@ -5,7 +5,7 @@ import java.io.*;
 public class HelpCommand implements Command {
     @Override
     public String execute() {
-        try(BufferedReader br = new BufferedReader(new FileReader("help.txt"))) {
+        try(BufferedReader br = new BufferedReader(new FileReader("resource/help.txt"))) {
             String line = " ";
             while((line = br.readLine())!=null){
                 System.out.println(line);

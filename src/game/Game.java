@@ -2,6 +2,7 @@ package game;
 
 import game.command.*;
 import game.gamedata.GameData;
+import game.location.Location;
 
 import java.util.Scanner;
 
@@ -12,6 +13,10 @@ public class Game {
 
     public Game() {
         data = GameData.loadGameDataFromResources("/gameData.json");
+        data.getLocations().forEach((k,v)->{
+            v.setItems();
+            v.setScs();
+        });
         commandManager = new CommandManager();
         commandManager.registerCommand('w', new UpCommand(data.getPlayer(), data));
         commandManager.registerCommand('a', new LeftCommand(data.getPlayer(), data));
@@ -28,7 +33,7 @@ public class Game {
         boolean exit = false;
         while(!exit){
             System.out.print(">>");
-            Character c = scanner.nextLine().charAt(0);
+            Character c = (scanner.nextLine() + " ").charAt(0);
             c = Character.toLowerCase(c);
             System.out.println(commandManager.executeCommand(c));
         }

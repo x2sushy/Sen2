@@ -1,5 +1,7 @@
 package game.character;
 
+import game.items.Item;
+
 import java.util.ArrayList;
 
 public class Character {
@@ -11,6 +13,7 @@ public class Character {
 
     public Character() {
     }
+    //todo metoda attack
     public void attack(){
     }
 

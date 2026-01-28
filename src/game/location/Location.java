@@ -3,7 +3,10 @@ package game.location;
 
 import game.character.SC;
 import game.gamedata.GameData;
+import game.items.Armor;
 import game.items.Item;
+import game.items.Potions;
+import game.items.Weapons;
 
 import java.util.ArrayList;
 
@@ -12,35 +15,28 @@ public class Location {
     private String id;
     private String name;
     private ArrayList<String> characters;
-    private ArrayList<String> loot;
+    private String weapon;
+    private String armor;
+    private String potion;
     private String up;
     private String down;
     private String left;
     private String right;
     private ArrayList<SC> scs;
-    private ArrayList<Item> items;
-    private GameData gameData;
 
     public Location() {
     }
 
-    public void setScs() {
+    public void setScs(GameData gameData) {
+        scs = new ArrayList<>();
         if(characters == null){
             characters = new ArrayList<>();
         }
         for(String chrId:characters){
-            // todo scs.add(gameData.getSC(chrId));
+            scs.add(gameData.getSC(chrId));
         }
     }
 
-    public void setItems() {
-        if(loot == null){
-            loot = new ArrayList<>();
-        }
-        for(String itmId:loot){
-            items.add(gameData.getItem(itmId));
-        }
-    }
 
     public String getId() {
         return id;
@@ -98,22 +94,6 @@ public class Location {
         this.right = right;
     }
 
-    public ArrayList<String> getLoot() {
-        return loot;
-    }
-
-    public void setLoot(ArrayList<String> loot) {
-        this.loot = loot;
-    }
-
-    public ArrayList<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
-    }
-
     public ArrayList<SC> getScs() {
         return scs;
     }
@@ -121,4 +101,29 @@ public class Location {
     public void setScs(ArrayList<SC> scs) {
         this.scs = scs;
     }
+
+    public String getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(String weapon) {
+        this.weapon = weapon;
+    }
+
+    public String getArmor() {
+        return armor;
+    }
+
+    public void setArmor(String armor) {
+        this.armor = armor;
+    }
+
+    public String getPotion() {
+        return potion;
+    }
+
+    public void setPotion(String potion) {
+        this.potion = potion;
+    }
 }
+

@@ -20,29 +20,25 @@ public class PickUpCommand implements Command {
     public String execute() {
         String temp = "";
         boolean x = true;
-        String temp2 = "nic";
-        if (gameData.findLocation(player.getLocationNow()).getLoot() != null) {
+        if (gameData.findLocation(player.getLocationNow()).getWeapon() != null) {
             while (x) {
-                System.out.println(gameData.findLocation(player.getLocationNow()).getLoot());
-                int num = sc.nextInt();
+                System.out.println(gameData.findLocation(player.getLocationNow()).getWeapon() + ", " + gameData.findLocation(player.getLocationNow()).getArmor() + ", " + gameData.findLocation(player.getLocationNow()).getPotion());
+                int num = Integer.parseInt(sc.next());
                 switch (num) {
                     case 1 -> {
-                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getLoot().getFirst());
+                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getWeapon());
                         x = false;
-                        gameData.findLocation(player.getLocationNow()).getLoot().removeFirst();
-                        gameData.findLocation(player.getLocationNow()).getLoot().addFirst(temp2);
+                        gameData.findLocation(player.getLocationNow()).setWeapon(null);
                     }
                     case 2 -> {
-                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getLoot().get(1));
+                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getArmor());
                         x = false;
-                        gameData.findLocation(player.getLocationNow()).getLoot().remove(1);
-                        gameData.findLocation(player.getLocationNow()).getLoot().add(1, temp2);
+                        gameData.findLocation(player.getLocationNow()).setArmor(null);
                     }
                     case 3 -> {
-                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getLoot().getLast());
+                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getPotion());
                         x = false;
-                        gameData.findLocation(player.getLocationNow()).getLoot().removeLast();
-                        gameData.findLocation(player.getLocationNow()).getLoot().addLast(temp2);
+                        gameData.findLocation(player.getLocationNow()).setPotion(null);
                     }
                     case 4 -> {
                         temp = "nic sis nevzal";

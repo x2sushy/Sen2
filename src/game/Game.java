@@ -14,8 +14,7 @@ public class Game {
     public Game() {
         data = GameData.loadGameDataFromResources("/gameData.json");
         data.getLocations().forEach((k,v)->{
-            v.setItems();
-            v.setScs();
+            v.setScs(data);
         });
         commandManager = new CommandManager();
         commandManager.registerCommand('w', new UpCommand(data.getPlayer(), data));

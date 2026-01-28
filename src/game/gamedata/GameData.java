@@ -4,7 +4,7 @@ import game.Main;
 import game.character.MC;
 import game.character.SC;
 import com.google.gson.Gson;
-import game.items.Item;
+import game.items.*;
 import game.location.Location;
 
 import java.io.InputStream;
@@ -19,7 +19,10 @@ import java.util.HashMap;
  */
 public class GameData {
 
-    private HashMap<String, Item> items;
+    private HashMap<String, Weapons> weapons;
+    private HashMap<String, Armor> armors;
+    private HashMap<String, Potions> potions;
+    private HashMap<String, OtherItems> curse;
     private HashMap<String, SC> sideCharacters;
     private HashMap<String, Location> locations;
     private MC player;
@@ -66,12 +69,36 @@ public class GameData {
         throw new IllegalArgumentException("Neexistuje lokace s id: " + id);
     }
 
-    public Item getItem(String id) {
-        Item item = items.get(id);
-        if(item==null) {
-            throw new NullPointerException("žádný item nemá toto id");
+    public Weapons getWeapon(String id) {
+        Weapons weapon = weapons.get(id);
+        if(weapons == null) {
+            throw new NullPointerException("žádná zbraň nemá toto id");
         }
-        return item;
+        return weapon;
+    }
+
+    public Armor getArmor(String id) {
+        Armor armor = armors.get(id);
+        if(armors == null) {
+            throw new NullPointerException("žádné brnění nemá toto id");
+        }
+        return armor;
+    }
+
+    public Potions getPotion(String id) {
+        Potions potion = potions.get(id);
+        if(potions == null) {
+            throw new NullPointerException("žádný elixír nemá toto id");
+        }
+        return potion;
+    }
+
+    public OtherItems getCurse(String id) {
+        OtherItems cur = curse.get(id);
+        if(curse == null) {
+            throw new NullPointerException("žádný předmět nemá toto id");
+        }
+        return cur;
     }
 
     public SC getSC(String id) {
@@ -82,9 +109,6 @@ public class GameData {
         return sc;
     }
 
-    public HashMap<String, Item> getItems() {
-        return items;
-    }
 
     public HashMap<String, SC> getSideCharacters() {
         return sideCharacters;

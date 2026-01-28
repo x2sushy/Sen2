@@ -1,84 +1,97 @@
 {
+  "weapons": {
+    "basicSword1": { "id": "basicSword1", "name": "meč", "damage": 10 },
+    "basicSword2": { "id": "basicSword2", "name": "meč", "damage": 12 },
+    "basicSword3": { "id": "basicSword3", "name": "meč", "damage": 14 },
+    "basicSword4": { "id": "basicSword4", "name": "meč", "damage": 16 },
+    "betterSword": { "id": "betterSword", "name": "lepší meč", "damage": 25 },
+    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 10 }
+  },
+  "armors": {
+    "basicArmor1": { "id": "basicArmor1", "name": "brnění", "reduction": 1 },
+    "basicArmor2": { "id": "basicArmor2", "name": "brnění", "reduction": 2 },
+    "basicArmor3": { "id": "basicArmor3", "name": "brnění", "reduction": 3 },
+    "basicArmor4": { "id": "basicArmor4", "name": "brnění", "reduction": 4 },
+    "betterArmor": { "id": "betterArmor", "name": "lepší brnění", "reduction": 10 }
+  },
+  "potions": {
+    "potion": { "id": "potion", "name": "elixír", "healthBonus": 20 }
+  },
+  "curses": {
+    "curse": { "id": "curse", "name": "odzaklínadlo" }
+  },
   "locations": {
     "paseka": {
       "id": "paseka",
       "name": "Paseka",
       "characters": ["herold"],
-      "loot" : null,
-      "up": null,
-      "down": null,
-      "left": "tajemnyLes",
-      "right": "skalnateHory"
+      "weapon" : null,
+      "armor" : null,
+      "potion" : null,
+      "up": null, "down": null, "left": "tajemnyLes", "right": "skalnateHory"
     },
     "skalnateHory": {
       "id": "skalnateHory",
       "name": "Skalnaté Hory",
       "characters": ["enemy1"],
-      "loot": ["basicSword1", "basicArmor1", "potion"],
-      "up": "pekelneUdoli",
-      "down": null,
-      "left": "paseka",
-      "right": "kopcoviteVrchy"
+      "weapon" : "basicSword1",
+      "armor" : "basicArmor1",
+      "potion" : "potion",
+      "up": "pekelneUdoli", "down": null, "left": "paseka", "right": "kopcoviteVrchy"
     },
     "kopcoviteVrchy": {
       "id": "kopcoviteVrchy",
       "name": "Kopcovité Vrchy",
       "characters": ["enemy2", "enemy3", "enemy4"],
-      "loot": ["basicSword2", "basicArmor2", "potion"],
-      "up": null,
-      "down": null,
-      "left": "skalnateHory",
-      "right": "princezninPalac"
+      "weapon" : "basicSword2",
+      "armor" : "basicArmor2",
+      "potion" : "potion",
+      "up": null, "down": null, "left": "skalnateHory", "right": "princezninPalac"
     },
     "tajemnyLes": {
       "id": "tajemnyLes",
       "name": "Tajemný Les",
       "characters": ["enemy5", "enemy6"],
-      "loot": ["basicSword3", "basicArmor3", "potion"],
-      "up": null,
-      "down": null,
-      "left": "kronosovoSidlo",
-      "right": "paseka"
+      "weapon" : "basicSword3",
+      "armor" : "basicArmor3",
+      "potion" : "potion",
+      "up": null, "down": null, "left": "kronosovoSidlo", "right": "paseka"
     },
     "kronosovoSidlo": {
       "id": "kronosovoSidlo",
       "name": "Kronosovo Sídlo",
       "characters": ["kronos", "enemy7", "enemy8", "enemy9"],
-      "loot": ["magicWand", "betterArmor", "curse"],
-      "up": null,
-      "down": "francovaJeskyne",
-      "left": null,
-      "right": "tajemnyLes"
+      "weapon" : "basicSword4",
+      "armor" : "basicArmor4",
+      "potion" : "potion",
+      "up": null, "down": "francovaJeskyne", "left": null, "right": "tajemnyLes"
     },
     "francovaJeskyne": {
       "id": "francovaJeskyne",
       "name": "Francova Jeskyně",
       "characters": ["franc"],
-      "loot" : null,
-      "up": "kronosovoSidlo",
-      "down": null,
-      "left": null,
-      "right": null
+      "weapon" : "betterSword",
+      "armor" : "betterArmor",
+      "potion" : "potion",
+      "up": "kronosovoSidlo", "down": null, "left": null, "right": null
     },
     "pekelneUdoli": {
       "id": "pekelneUdoli",
       "name": "Pekelné Údolí",
-      "characters": null,
-      "loot" : null,
-      "up": null,
-      "down": "skalnateHory",
-      "left": null,
-      "right": null
+      "characters": [],
+      "weapon" : null,
+      "armor" : null,
+      "potion" : null,
+      "up": null, "down": "skalnateHory", "left": null, "right": null
     },
     "princezninPalac": {
       "id": "princezninPalac",
       "name": "Princeznin Palác",
       "characters": ["princezna"],
-      "loot" : null,
-      "up": null,
-      "down": null,
-      "left": "kopcoviteVrchy",
-      "right": null
+      "weapon" : null,
+      "armor" : null,
+      "potion" : null,
+      "up": null, "down": null, "left": "kopcoviteVrchy", "right": null
     }
   },
   "sideCharacters": {
@@ -93,29 +106,14 @@
     "enemy9": { "id": "enemy9", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"] },
     "herold": { "id": "herold", "name": "Herold", "health": 100, "isFriendly": true, "loot": ["basicSword1", "basicArmor1", "potion"] },
     "franc": { "id": "franc", "name": "Franc", "health": 150, "isFriendly": true, "loot": ["betterSword", "betterArmor", "potion"] },
-    "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": null },
+    "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": [] },
     "kronos": { "id": "kronos", "name": "Kronos", "health": 100, "isFriendly": false, "loot": ["magicWand", "betterArmor", "potion", "curse"] }
-  },
-  "items": {
-    "basicSword1": { "id": "basicSword1", "name": "meč", "damage": 10 },
-    "basicSword2": { "id": "basicSword2", "name": "meč", "damage": 12 },
-    "basicSword3": { "id": "basicSword3", "name": "meč", "damage": 14 },
-    "basicSword4": { "id": "basicSword4", "name": "meč", "damage": 16 },
-    "basicArmor1": { "id": "basicArmor1", "name": "brnění", "reduction": 1 },
-    "basicArmor2": { "id": "basicArmor2", "name": "brnění", "reduction": 2 },
-    "basicArmor3": { "id": "basicArmor3", "name": "brnění", "reduction": 3 },
-    "basicArmor4": { "id": "basicArmor4", "name": "brnění", "reduction": 4 },
-    "potion": { "id": "potion", "name": "elixír", "healthBonus": 20 },
-    "betterSword": { "id": "betterSword", "name": "lepší meč", "damage": 25 },
-    "betterArmor": { "id": "betterArmor", "name": "lepší brnění", "reduction": 10 },
-    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 10 },
-    "curse": { "id": "curse", "name": "odzaklínadlo" }
   },
   "player": {
     "id": "hrac",
     "name": "Hrdina",
     "health": 100,
-    "locationNow": "paseka",
-    "loot": ["magicWand", "betterArmor", "potion", "curse"]
+    "location": "paseka",
+    "inventory": ["magicWand", "betterArmor", "potion", "curse"]
   }
 }

@@ -1,8 +1,41 @@
 package game.items;
 
-public class Armor extends Item{
-    @Override
+import game.character.Character;
+
+public class Armor extends Item {
+
+    private String id;
+    private String name;
+    private int reduction;
+
+    public Armor() {
+    }
+
     public boolean use() {
         return false;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getReduction() {
+        return reduction;
+    }
+
+    public void setReduction(int reduction) {
+        this.reduction = reduction;
     }
 }

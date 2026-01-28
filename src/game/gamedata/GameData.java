@@ -71,7 +71,7 @@ public class GameData {
 
     public Weapons getWeapon(String id) {
         Weapons weapon = weapons.get(id);
-        if(weapons == null) {
+        if(weapon == null) {
             throw new NullPointerException("žádná zbraň nemá toto id");
         }
         return weapon;
@@ -79,7 +79,7 @@ public class GameData {
 
     public Armor getArmor(String id) {
         Armor armor = armors.get(id);
-        if(armors == null) {
+        if(armor == null) {
             throw new NullPointerException("žádné brnění nemá toto id");
         }
         return armor;
@@ -87,7 +87,7 @@ public class GameData {
 
     public Potions getPotion(String id) {
         Potions potion = potions.get(id);
-        if(potions == null) {
+        if(potion == null) {
             throw new NullPointerException("žádný elixír nemá toto id");
         }
         return potion;

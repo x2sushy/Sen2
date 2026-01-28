@@ -113,7 +113,7 @@
     "id": "hrac",
     "name": "Hrdina",
     "health": 100,
-    "location": "paseka",
-    "inventory": ["magicWand", "betterArmor", "potion", "curse"]
+    "locationNow": "paseka",
+    "loot": ["magicWand", "betterArmor", "potion", "curse"]
   }
 }

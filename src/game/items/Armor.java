@@ -38,4 +38,10 @@ public class Armor extends Item {
     public void setReduction(int reduction) {
         this.reduction = reduction;
     }
+
+    @Override
+    public String toString() {
+        return name +
+                ": redukce: " + reduction;
+    }
 }

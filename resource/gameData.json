@@ -114,6 +114,6 @@
     "name": "Hrdina",
     "health": 100,
     "locationNow": "paseka",
-    "loot": ["magicWand", "betterArmor", "potion", "curse"]
+    "loot": ["magicWand", "betterArmor", "potion"]
   }
 }

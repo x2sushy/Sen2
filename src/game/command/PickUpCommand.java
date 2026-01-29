@@ -22,21 +22,21 @@ public class PickUpCommand implements Command {
         boolean x = true;
         if (gameData.findLocation(player.getLocationNow()).getWeapon() != null) {
             while (x) {
-                System.out.println(gameData.findLocation(player.getLocationNow()).getWeapon() + ", " + gameData.findLocation(player.getLocationNow()).getArmor() + ", " + gameData.findLocation(player.getLocationNow()).getPotion());
+                System.out.println(gameData.getWeapon(gameData.findLocation(player.getLocationNow()).getWeapon()).getName() + ", " + gameData.getArmor(gameData.findLocation(player.getLocationNow()).getArmor()).getName() + ", " + gameData.getPotion(gameData.findLocation(player.getLocationNow()).getPotion()).getName());
                 int num = Integer.parseInt(sc.next());
                 switch (num) {
                     case 1 -> {
-                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getWeapon());
+                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getWeapon(), gameData);
                         x = false;
                         gameData.findLocation(player.getLocationNow()).setWeapon(null);
                     }
                     case 2 -> {
-                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getArmor());
+                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getArmor(), gameData);
                         x = false;
                         gameData.findLocation(player.getLocationNow()).setArmor(null);
                     }
                     case 3 -> {
-                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getPotion());
+                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getPotion(),  gameData);
                         x = false;
                         gameData.findLocation(player.getLocationNow()).setPotion(null);
                     }

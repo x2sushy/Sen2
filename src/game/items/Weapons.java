@@ -13,9 +13,8 @@ public class Weapons extends Item {
 
     @Override
     public String toString() {
-        return "zbraň: " +
-                "damage=" + damage +
-                ", jméno=" + name;
+        return name  +
+                ": damage: " + damage;
     }
 
     public boolean use() {

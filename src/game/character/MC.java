@@ -1,5 +1,7 @@
 package game.character;
 
+import game.gamedata.GameData;
+
 public class MC extends Character{
 
     private String locationNow;
@@ -15,6 +17,36 @@ public class MC extends Character{
         this.locationNow = locationNow;
     }
 
+    public String addToLoot(int index, String item, GameData gameData) {
+        String temp = "";
+        switch (index) {
+            case 1 -> {if (loot.size() < 5) {
+                loot.remove(index-1);
+                loot.add(index-1, item);
+                temp = "sebral jsi: " + gameData.getWeapon(item).getName();
+                } else {
+                temp = "máš plný inventář";
+                }
+            }
+            case 2 -> {if (loot.size() < 5) {
+                loot.remove(index-1);
+                loot.add(index-1, item);
+                temp = "sebral jsi: " + gameData.getArmor(item).getName();
+                }else {
+                temp = "máš plný inventář";
+                }
+            }
+            case 3 -> {if (loot.size() < 5) {
+                loot.remove(index-1);
+                loot.addLast(item);
+                temp = "sebral jsi: " + gameData.getPotion(item).getName();
+                }else {
+                temp = "máš plný inventář";
+                }
+            }
+        }
+        return temp;
+    }
 
 
 

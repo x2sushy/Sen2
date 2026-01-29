@@ -49,24 +49,5 @@ public class Character {
         this.loot = loot;
     }
 
-    public String addToLoot(int index, String item) {
-        String temp = "";
-        if (index == 1 || index == 2) {
-            if (loot.size() < 5) {
-                loot.remove(index-1);
-                loot.add(index-1, item);
-                temp = "sebral jsi: " + item;
-            } else {
-                temp = "máš plný inventář";
-            }
-        }else {
-            if (loot.size() < 5) {
-                loot.addLast(item);
-                temp = "sebral jsi: " + item;
-            }else {
-                temp = "máš plný inventář";
-            }
-        }
-        return temp;
-    }
+
 }

@@ -11,7 +11,7 @@ public class Potions extends Item {
 
     @Override
     public String toString() {
-        return name + "přidá" + health + "životů";
+        return name + ": přidá " + health + " životů";
     }
 
 

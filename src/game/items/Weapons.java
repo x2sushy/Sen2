@@ -1,6 +1,7 @@
 package game.items;
 
 import game.character.Character;
+import game.gamedata.GameData;
 
 public class Weapons extends Item {
 
@@ -17,8 +18,8 @@ public class Weapons extends Item {
                 ": damage: " + damage;
     }
 
-    public boolean use() {
-        return false;
+    public int use(Character character, GameData gameData) {
+        return damage - gameData.getArmor(character.getLoot().get(1)).getReduction();
     }
 
     public String getId() {

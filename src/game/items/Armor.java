@@ -11,10 +11,6 @@ public class Armor extends Item {
     public Armor() {
     }
 
-    public boolean use() {
-        return false;
-    }
-
     public String getId() {
         return id;
     }

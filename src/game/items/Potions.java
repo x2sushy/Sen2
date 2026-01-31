@@ -1,5 +1,7 @@
 package game.items;
 
+import game.character.MC;
+
 public class Potions extends Item {
 
     private String id;
@@ -15,8 +17,14 @@ public class Potions extends Item {
     }
 
 
-    public boolean use() {
-        return false;
+    public String use(MC player) {
+        if (player.getHealth() > 0) {
+            player.setHealth(player.getHealth() + health);
+        } else{
+            System.out.println("jsi mrtvý");
+            System.exit(0);
+        }
+        return "přidal sis " + health + " životů";
     }
 
 

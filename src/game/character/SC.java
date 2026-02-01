@@ -7,4 +7,7 @@ public class SC extends Character{
     public SC() {
     }
 
+    public boolean isFriendly() {
+        return isFriendly;
+    }
 }

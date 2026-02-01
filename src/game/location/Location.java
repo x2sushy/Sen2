@@ -3,10 +3,6 @@ package game.location;
 
 import game.character.SC;
 import game.gamedata.GameData;
-import game.items.Armor;
-import game.items.Item;
-import game.items.Potions;
-import game.items.Weapons;
 
 import java.util.ArrayList;
 

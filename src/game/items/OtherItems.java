@@ -1,7 +1,5 @@
 package game.items;
 
-import game.character.Character;
-
 public class OtherItems extends Item {
 
     private String id;

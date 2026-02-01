@@ -18,9 +18,9 @@ public class InventoryCommand implements Command {
         String loot = "";
         for (int i = 0; i < player.getLoot().size(); i++) {
             switch (i){
-                case 0-> loot += gameData.getWeapon(player.getLoot().get(i)).toString();
-                case 1-> loot += ", " + gameData.getArmor(player.getLoot().get(i)).toString();
-                default-> loot += ", " + gameData.getPotion(player.getLoot().get(i)).toString();
+                case 0-> loot += i + ") " + gameData.getWeapon(player.getLoot().get(i)).toString();
+                case 1-> loot += ", " + i + ") " + gameData.getArmor(player.getLoot().get(i)).toString();
+                default-> loot += ", " + i + ") " + gameData.getPotion(player.getLoot().get(i)).toString();
             }
         }
         return loot;

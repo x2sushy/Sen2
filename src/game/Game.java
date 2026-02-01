@@ -26,7 +26,14 @@ public class Game {
         commandManager.registerCommand('i', new InventoryCommand(data.getPlayer(), data));
         commandManager.registerCommand('e', new PickUpCommand(data.getPlayer(), data));
     }
-    //todo při vypisování itemu lokací a vseho z jsonu vypisovat jmeno a ne id
+
+    public CommandManager getCommandManager() {
+        return commandManager;
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
 
     public void run(){
         boolean exit = false;

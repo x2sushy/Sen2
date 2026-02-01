@@ -22,7 +22,7 @@ public class GameData {
     private HashMap<String, Weapons> weapons;
     private HashMap<String, Armor> armors;
     private HashMap<String, Potions> potions;
-    private HashMap<String, OtherItems> curse;
+    private HashMap<String, OtherItems> curses;
     private HashMap<String, SC> sideCharacters;
     private HashMap<String, Location> locations;
     private MC player;
@@ -94,8 +94,8 @@ public class GameData {
     }
 
     public OtherItems getCurse(String id) {
-        OtherItems cur = curse.get(id);
-        if(curse == null) {
+        OtherItems cur = curses.get(id);
+        if(curses == null) {
             throw new NullPointerException("žádný předmět nemá toto id");
         }
         return cur;

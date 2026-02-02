@@ -10,4 +10,9 @@ public class SC extends Character{
     public boolean isFriendly() {
         return isFriendly;
     }
+
+    @Override
+    public String toString() {
+        return name + ": životy: " + health;
+    }
 }

@@ -24,13 +24,20 @@ public class Character {
             do {
                 System.out.println("co chceš použít:");
                 System.out.println(game.getCommandManager().executeCommand('i'));
+                String input = game.getScanner().nextLine().trim();
                 try {
-                    temp = game.getScanner().nextInt();
-                    tmp = false;
-                } catch (InputMismatchException e) {
+                    temp = Integer.parseInt(input);
+                    if (temp < loot.size()) {
+                        tmp = false;
+                    } else {
+                        System.out.println("zadal jsi moc velké číslo");
+                        tmp = true;
+                    }
+                } catch (Exception e) {
                     System.out.println("špatný input");
                     tmp = true;
                 }
+                System.out.println(enemy.toString());
             } while (tmp);
             switch (temp) {
                 case 1 -> {
@@ -56,6 +63,7 @@ public class Character {
                 }
             }
         }while (health > 0 && enemy.getHealth() > 0);
+        System.out.println("zabil jsi: " + enemy.getName());
     }
 
     public String getId() {

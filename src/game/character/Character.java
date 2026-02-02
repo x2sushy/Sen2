@@ -27,7 +27,7 @@ public class Character {
                 String input = game.getScanner().nextLine().trim();
                 try {
                     temp = Integer.parseInt(input);
-                    if (temp < loot.size()) {
+                    if (temp <= loot.size()) {
                         tmp = false;
                     } else {
                         System.out.println("zadal jsi moc velké číslo");
@@ -37,7 +37,6 @@ public class Character {
                     System.out.println("špatný input");
                     tmp = true;
                 }
-                System.out.println(enemy.toString());
             } while (tmp);
             switch (temp) {
                 case 1 -> {
@@ -46,19 +45,25 @@ public class Character {
                         if (enemy.getHealth() > 0) {
                             health = health - data.getWeapon(enemy.getLoot().getFirst()).use(this, data);
                             System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(this, data) + " životů");
+                        }else {
+                            enemy.setHealth(0);
                         }
+                        System.out.println(enemy);
                     }
                 }
                 case 2 -> {
                     System.out.println("brnění máš na sobě, není důvod ho používat");
+                    System.out.println(enemy.toString());
                 }
                 default -> {
                     if (loot.get(temp - 1).equals("curse")) {
                         System.out.println("zaklínadlo nemůžeš použít na nepřítele");
+                        System.out.println(enemy.toString());
                     } else {
                         System.out.println(data.getPotion(loot.get(temp - 1)).use((MC) this));
                         health = health - data.getWeapon(enemy.getLoot().getFirst()).use(this, data);
                         System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(this, data) + " životů");
+                        System.out.println(enemy);
                     }
                 }
             }

@@ -42,10 +42,15 @@ public class Game {
         boolean exit = true;
         //uvod do hry
         while(exit){
-            if (!data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).isFriendly()){
-                System.out.println("v lokaci se nachází nepřátelé");
-                for (int i = 0; i < data.findLocation(player.getLocationNow()).getCharacters().size(); i++) {
-                    player.attack(data, data.getSC(data.findLocation(player.getLocationNow()).getCharacters().get(i)),new Game());
+            if (!data.findLocation(player.getLocationNow()).getCharacters().isEmpty()) {
+                if (data.findLocation(player.getLocationNow()).getCharacters() != null && !data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).isFriendly()) {
+                    System.out.println("v lokaci se nachází nepřátelé");
+                    for (int i = 0; i < data.findLocation(player.getLocationNow()).getCharacters().size(); i++) {
+                        System.out.println("počet nepřátel: " + data.findLocation(player.getLocationNow()).getCharacters().size());
+                        player.attack(data, data.getSC(data.findLocation(player.getLocationNow()).getCharacters().get(i)), new Game());
+                        data.findLocation(player.getLocationNow()).getCharacters().removeFirst();
+                        i--;
+                    }
                 }
             }
             System.out.print(">>");

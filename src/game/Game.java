@@ -1,5 +1,6 @@
 package game;
 
+import game.character.MC;
 import game.command.*;
 import game.gamedata.GameData;
 import game.location.Location;
@@ -7,6 +8,7 @@ import game.location.Location;
 import java.util.Scanner;
 
 public class Game {
+    private MC player;
     private Scanner scanner = new Scanner(System.in);
     private CommandManager commandManager;
     private GameData data;
@@ -16,6 +18,7 @@ public class Game {
         data.getLocations().forEach((k,v)->{
             v.setScs(data);
         });
+        player = data.getPlayer();
         commandManager = new CommandManager();
         commandManager.registerCommand('w', new UpCommand(data.getPlayer(), data));
         commandManager.registerCommand('a', new LeftCommand(data.getPlayer(), data));
@@ -36,10 +39,17 @@ public class Game {
     }
 
     public void run(){
-        boolean exit = false;
-        while(!exit){
+        boolean exit = true;
+        //uvod do hry
+        while(exit){
+            if (!data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).isFriendly()){
+                System.out.println("v lokaci se nachází nepřátelé");
+                for (int i = 0; i < data.findLocation(player.getLocationNow()).getCharacters().size(); i++) {
+                    player.attack(data, data.getSC(data.findLocation(player.getLocationNow()).getCharacters().get(i)),new Game());
+                }
+            }
             System.out.print(">>");
-            Character c = (scanner.nextLine() + " ").charAt(0);
+            char c = (scanner.nextLine() + " ").charAt(0);
             c = Character.toLowerCase(c);
             System.out.println(commandManager.executeCommand(c));
         }

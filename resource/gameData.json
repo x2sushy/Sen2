@@ -5,7 +5,7 @@
     "basicSword3": { "id": "basicSword3", "name": "meč", "damage": 14 },
     "basicSword4": { "id": "basicSword4", "name": "meč", "damage": 16 },
     "betterSword": { "id": "betterSword", "name": "lepší meč", "damage": 25 },
-    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 10 }
+    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 50 }
   },
   "armors": {
     "basicArmor1": { "id": "basicArmor1", "name": "brnění", "reduction": 1 },
@@ -15,7 +15,7 @@
     "betterArmor": { "id": "betterArmor", "name": "lepší brnění", "reduction": 10 }
   },
   "potions": {
-    "potion": { "id": "potion", "name": "elixír", "healthBonus": 20 }
+    "potion": { "id": "potion", "name": "elixír", "health": 20 }
   },
   "curses": {
     "curse": { "id": "curse", "name": "odzaklínadlo" }

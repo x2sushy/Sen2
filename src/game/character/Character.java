@@ -5,6 +5,7 @@ import game.gamedata.GameData;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Character {
 
@@ -16,43 +17,45 @@ public class Character {
     public Character() {
     }
 
-    public void attack(GameData data, MC player, SC enemy, Game game) {
-        while(player.getHealth()>0 && enemy.getHealth()>0) {
+    public void attack(GameData data, SC enemy, Game game) {
+        do {
             int temp = 0;
             boolean tmp;
             do {
                 System.out.println("co chceš použít:");
                 System.out.println(game.getCommandManager().executeCommand('i'));
-                try{temp = game.getScanner().nextInt();
+                try {
+                    temp = game.getScanner().nextInt();
                     tmp = false;
-                }catch(InputMismatchException e){
+                } catch (InputMismatchException e) {
                     System.out.println("špatný input");
                     tmp = true;
                 }
-            } while(tmp);
+            } while (tmp);
             switch (temp) {
                 case 1 -> {
                     if (!enemy.isFriendly()) {
-                        enemy.setHealth(enemy.getHealth() - data.getWeapon(player.getLoot().getFirst()).use(enemy, data));
-                        player.setHealth(player.getHealth() - data.getWeapon(enemy.getLoot().getFirst()).use(player, data));
-                        System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(player, data) + " životů");
+                        enemy.setHealth(enemy.getHealth() - data.getWeapon(loot.getFirst()).use(enemy, data));
+                        if (enemy.getHealth() > 0) {
+                            health = health - data.getWeapon(enemy.getLoot().getFirst()).use(this, data);
+                            System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(this, data) + " životů");
+                        }
                     }
                 }
                 case 2 -> {
                     System.out.println("brnění máš na sobě, není důvod ho používat");
                 }
                 default -> {
-                    if(player.getLoot().get(temp-1).equals("curse")){
+                    if (loot.get(temp - 1).equals("curse")) {
                         System.out.println("zaklínadlo nemůžeš použít na nepřítele");
-                    }else{
-                        System.out.println(data.getPotion(player.getLoot().get(temp-1)).use(player));
-                        player.setHealth(player.getHealth() - data.getWeapon(enemy.getLoot().getFirst()).use(player, data));
-                        System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(player, data) + " životů");
+                    } else {
+                        System.out.println(data.getPotion(loot.get(temp - 1)).use((MC) this));
+                        health = health - data.getWeapon(enemy.getLoot().getFirst()).use(this, data);
+                        System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(this, data) + " životů");
                     }
                 }
             }
-        }
-
+        }while (health > 0 && enemy.getHealth() > 0);
     }
 
     public String getId() {

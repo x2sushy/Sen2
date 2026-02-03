@@ -40,7 +40,7 @@ public class Game {
 
     public void run(){
         boolean exit = true;
-        //uvod do hry
+        //todo uvod do hry
         while(exit){
             if (!data.findLocation(player.getLocationNow()).getCharacters().isEmpty()) {
                 if (data.findLocation(player.getLocationNow()).getCharacters() != null && !data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).isFriendly()) {
@@ -51,8 +51,12 @@ public class Game {
                         data.findLocation(player.getLocationNow()).getCharacters().removeFirst();
                         i--;
                     }
+                }else{
+                    System.out.println("v lokaci se nachází: " + data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).getName());
+                    //todo moznost dialogu s postavami
                 }
             }
+            //todo if na curse a na palac
             System.out.print(">>");
             char c = (scanner.nextLine() + " ").charAt(0);
             c = Character.toLowerCase(c);

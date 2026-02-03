@@ -5,6 +5,7 @@ import game.gamedata.GameData;
 public class MC extends Character{
 
     private String locationNow;
+    private boolean hasCurse = false;
 
     public MC() {
     }
@@ -49,5 +50,11 @@ public class MC extends Character{
     }
 
 
+    public boolean isHasCurse() {
+        return hasCurse;
+    }
 
+    public void setHasCurse(boolean hasCurse) {
+        this.hasCurse = hasCurse;
+    }
 }

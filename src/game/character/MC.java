@@ -5,7 +5,7 @@ import game.gamedata.GameData;
 public class MC extends Character{
 
     private String locationNow;
-    private boolean hasCurse = false;
+    private boolean curse = false;
 
     public MC() {
     }
@@ -50,11 +50,11 @@ public class MC extends Character{
     }
 
 
-    public boolean isHasCurse() {
-        return hasCurse;
+    public boolean HasCurse() {
+        return curse;
     }
 
     public void setHasCurse(boolean hasCurse) {
-        this.hasCurse = hasCurse;
+        this.curse = hasCurse;
     }
 }

@@ -12,7 +12,7 @@ public class InventoryCommand implements Command {
         this.player = player;
         this.gameData = gameData;
     }
-    //todo dokonci execute
+
     @Override
     public String execute() {
         String loot = "";

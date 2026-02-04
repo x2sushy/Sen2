@@ -49,6 +49,7 @@ public class Character {
                             enemy.setHealth(0);
                         }
                         System.out.println(enemy);
+                        System.out.println("tvoje životy: " + this.health);
                     }
                 }
                 case 2 -> {

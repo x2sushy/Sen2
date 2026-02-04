@@ -4,8 +4,8 @@
     "basicSword2": { "id": "basicSword2", "name": "meč", "damage": 12 },
     "basicSword3": { "id": "basicSword3", "name": "meč", "damage": 14 },
     "basicSword4": { "id": "basicSword4", "name": "meč", "damage": 16 },
-    "betterSword": { "id": "betterSword", "name": "lepší meč", "damage": 25 },
-    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 50 }
+    "betterSword": { "id": "betterSword", "name": "lepší meč", "damage": 100 },
+    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 10 }
   },
   "armors": {
     "basicArmor1": { "id": "basicArmor1", "name": "brnění", "reduction": 1 },
@@ -95,25 +95,25 @@
     }
   },
   "sideCharacters": {
-    "enemy1": { "id": "enemy1", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword1", "basicArmor1", "potion"] },
-    "enemy2": { "id": "enemy2", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword2", "basicArmor2", "potion"] },
-    "enemy3": { "id": "enemy3", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword2", "basicArmor2", "potion"] },
-    "enemy4": { "id": "enemy4", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword2", "basicArmor2", "potion"] },
-    "enemy5": { "id": "enemy5", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword3", "basicArmor3", "potion"] },
-    "enemy6": { "id": "enemy6", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword3", "basicArmor3", "potion"] },
-    "enemy7": { "id": "enemy7", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"] },
-    "enemy8": { "id": "enemy8", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"] },
-    "enemy9": { "id": "enemy9", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"] },
-    "herold": { "id": "herold", "name": "Herold", "health": 100, "isFriendly": true, "loot": ["basicSword1", "basicArmor1", "potion"] },
-    "franc": { "id": "franc", "name": "Franc", "health": 150, "isFriendly": true, "loot": ["betterSword", "betterArmor", "potion"] },
-    "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": [] },
-    "kronos": { "id": "kronos", "name": "Kronos", "health": 100, "isFriendly": false, "loot": ["magicWand", "betterArmor", "potion", "curse"] }
+    "enemy1": { "id": "enemy1", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword1", "basicArmor1", "potion"], "dialog": null },
+    "enemy2": { "id": "enemy2", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword2", "basicArmor2", "potion"], "dialog": null },
+    "enemy3": { "id": "enemy3", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword2", "basicArmor2", "potion"], "dialog": null },
+    "enemy4": { "id": "enemy4", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword2", "basicArmor2", "potion"], "dialog": null },
+    "enemy5": { "id": "enemy5", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword3", "basicArmor3", "potion"], "dialog": null },
+    "enemy6": { "id": "enemy6", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword3", "basicArmor3", "potion"], "dialog": null },
+    "enemy7": { "id": "enemy7", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"], "dialog": null },
+    "enemy8": { "id": "enemy8", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"], "dialog": null },
+    "enemy9": { "id": "enemy9", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"], "dialog": null },
+    "herold": { "id": "herold", "name": "Herold", "health": 100, "isFriendly": true, "loot": ["basicSword1", "basicArmor1", "potion"], "dialog": "Buď zdráv, hrdino! Pro začátek bych ti doporučil jít v pravo." },
+    "franc": { "id": "franc", "name": "Franc", "health": 150, "isFriendly": true, "loot": ["betterSword", "betterArmor", "potion"], "dialog": "V mé jeskyni najdeš sílu, kterou hledáš. Připrav se na boj." },
+    "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": [], "dialog": "Děkuji, že jsi mě zachránil! Už jsem ztrácela naději." },
+    "kronos": { "id": "kronos", "name": "Kronos", "health": 100, "isFriendly": false, "loot": ["magicWand", "betterArmor", "potion", "curse"], "dialog": null }
   },
   "player": {
     "id": "hrac",
     "name": "Hrdina",
     "health": 100,
     "locationNow": "paseka",
-    "loot": ["magicWand", "betterArmor", "potion"]
+    "loot": ["betterSword", "betterArmor", "potion"]
   }
 }

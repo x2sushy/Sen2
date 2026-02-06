@@ -18,12 +18,23 @@ public class PickUpCommand implements Command {
 
     @Override
     public String execute() {
+        //todo opravit
         String temp = "";
         boolean x = true;
-        if (gameData.findLocation(player.getLocationNow()).getWeapon() != null) {
+        int num = 0;
+        if (gameData.findLocation(player.getLocationNow()).getWeapon() != null && gameData.findLocation(player.getLocationNow()).getArmor() != null && gameData.findLocation(player.getLocationNow()).getPotion() != null) {
             while (x) {
-                System.out.println(gameData.getWeapon(gameData.findLocation(player.getLocationNow()).getWeapon()).getName() + ", " + gameData.getArmor(gameData.findLocation(player.getLocationNow()).getArmor()).getName() + ", " + gameData.getPotion(gameData.findLocation(player.getLocationNow()).getPotion()).getName());
-                int num = Integer.parseInt(sc.next());
+                System.out.println("můžeš si vzít jenom jednu věc, když dáš 4 tak si nevezmeš nic a předměty zůstanou v lokaci" + "\n" + gameData.getWeapon(gameData.findLocation(player.getLocationNow()).getWeapon()).getName() +
+                        ", " + gameData.getArmor(gameData.findLocation(player.getLocationNow()).getArmor()).getName() +
+                        ", " + gameData.getPotion(gameData.findLocation(player.getLocationNow()).getPotion()).getName());
+
+                try {
+                    num = Integer.parseInt(sc.next());
+                } catch (NumberFormatException e) {
+                    x = false;
+                }
+
+                x = true;
                 switch (num) {
                     case 1 -> {
                         temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getWeapon(), gameData);
@@ -36,7 +47,7 @@ public class PickUpCommand implements Command {
                         gameData.findLocation(player.getLocationNow()).setArmor(null);
                     }
                     case 3 -> {
-                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getPotion(),  gameData);
+                        temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getPotion(), gameData);
                         x = false;
                         gameData.findLocation(player.getLocationNow()).setPotion(null);
                     }
@@ -47,7 +58,7 @@ public class PickUpCommand implements Command {
                     default -> System.out.println("špatný input");
                 }
             }
-        }else {
+        } else {
             temp = "v této lokaci nic není";
         }
         return temp;

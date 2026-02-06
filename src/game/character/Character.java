@@ -27,10 +27,10 @@ public class Character {
                 String input = game.getScanner().nextLine().trim();
                 try {
                     temp = Integer.parseInt(input);
-                    if (temp <= loot.size()) {
+                    if (temp <= loot.size() && temp > 0) {
                         tmp = false;
                     } else {
-                        System.out.println("zadal jsi moc velké číslo");
+                        System.out.println("zadal jsi špatné číslo");
                         tmp = true;
                     }
                 } catch (Exception e) {

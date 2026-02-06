@@ -18,7 +18,6 @@ public class PickUpCommand implements Command {
 
     @Override
     public String execute() {
-        //todo opravit
         String temp = "";
         boolean x = true;
         int num = 0;
@@ -30,11 +29,9 @@ public class PickUpCommand implements Command {
 
                 try {
                     num = Integer.parseInt(sc.next());
-                } catch (NumberFormatException e) {
-                    x = false;
+                } catch (NumberFormatException _) {
                 }
 
-                x = true;
                 switch (num) {
                     case 1 -> {
                         temp = player.addToLoot(num, gameData.findLocation(player.getLocationNow()).getWeapon(), gameData);

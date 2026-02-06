@@ -4,8 +4,6 @@ import game.Game;
 import game.gamedata.GameData;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Character {
 

@@ -4,8 +4,6 @@ import game.Game;
 import game.gamedata.GameData;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Character {
 
@@ -68,7 +66,7 @@ public class Character {
                     }
                 }
             }
-        }while (health > 0 && enemy.getHealth() > 0);
+        }while (enemy.getHealth() > 0);
         System.out.println("zabil jsi: " + enemy.getName());
     }
 

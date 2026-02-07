@@ -11,6 +11,11 @@ public class Armor extends Item {
     public Armor() {
     }
 
+    public Armor(String name, int reduction) {
+        this.name = name;
+        this.reduction = reduction;
+    }
+
     public String getId() {
         return id;
     }

@@ -20,4 +20,12 @@ public class SC extends Character{
     public String toString() {
         return name + ": životy: " + health;
     }
+
+    public void setFriendly(boolean friendly) {
+        isFriendly = friendly;
+    }
+
+    public void setDialog(String dialog) {
+        this.dialog = dialog;
+    }
 }

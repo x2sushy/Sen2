@@ -20,6 +20,16 @@ public class Location {
     private String right;
     private ArrayList<SC> scs;
 
+    public Location(String id, String name, ArrayList<String> characters, String weapon, String armor, String potion, String right) {
+        this.id = id;
+        this.name = name;
+        this.characters = characters;
+        this.weapon = weapon;
+        this.armor = armor;
+        this.potion = potion;
+        this.right = right;
+    }
+
     public Location() {
     }
 
@@ -92,10 +102,6 @@ public class Location {
 
     public ArrayList<SC> getScs() {
         return scs;
-    }
-
-    public void setScs(ArrayList<SC> scs) {
-        this.scs = scs;
     }
 
     public String getWeapon() {

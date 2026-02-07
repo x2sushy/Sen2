@@ -11,6 +11,11 @@ public class Potions extends Item {
     public Potions() {
     }
 
+    public Potions(String name, int health) {
+        this.name = name;
+        this.health = health;
+    }
+
     @Override
     public String toString() {
         return name + ": přidá " + health + " životů";

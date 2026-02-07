@@ -12,6 +12,11 @@ public class Weapons extends Item {
     public Weapons() {
     }
 
+    public Weapons(String name, int damage) {
+        this.name = name;
+        this.damage = damage;
+    }
+
     @Override
     public String toString() {
         return name  +

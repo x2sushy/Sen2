@@ -1,6 +1,5 @@
 package game.gamedata;
 
-import game.Main;
 import game.character.MC;
 import game.character.SC;
 import com.google.gson.Gson;
@@ -95,7 +94,7 @@ public class GameData {
 
     public OtherItems getCurse(String id) {
         OtherItems cur = curses.get(id);
-        if(curses == null) {
+        if(cur == null) {
             throw new NullPointerException("žádný předmět nemá toto id");
         }
         return cur;
@@ -107,6 +106,16 @@ public class GameData {
             throw new NullPointerException("žádný charakter neodpovídá tomuto id");
         }
         return sc;
+    }
+
+    public void setUpForTesting(MC player, HashMap<String, Weapons> weapons, HashMap<String, Armor> armors, HashMap<String, Potions> potions, HashMap<String, Location> locations, HashMap<String, OtherItems> curses, HashMap<String, SC> sideCharacters) {
+        this.player = player;
+        this.weapons = weapons;
+        this.armors = armors;
+        this.potions = potions;
+        this.locations = locations;
+        this.curses = curses;
+        this.sideCharacters = sideCharacters;
     }
 
 

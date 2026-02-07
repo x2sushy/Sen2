@@ -10,6 +10,8 @@ public class MC extends Character{
     public MC() {
     }
 
+
+
     public String getLocationNow() {
         return locationNow;
     }

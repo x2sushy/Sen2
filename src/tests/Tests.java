@@ -34,6 +34,9 @@ public class Tests {
     private HashMap<String, Armor> armors;
     private HashMap<String, Potions> potions;
 
+    /**
+     * Sets up the environment for each test.
+     */
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
         player = new MC();
@@ -76,6 +79,9 @@ public class Tests {
         commandManager.registerCommand('i', inventory);
     }
 
+    /**
+     * Tests the dialog command execution.
+     */
     @org.junit.jupiter.api.Test
     void dialogExecute() {
         String tmp = dialog.execute();
@@ -84,6 +90,9 @@ public class Tests {
 
 
 
+    /**
+     * Tests the inventory command execution.
+     */
     @org.junit.jupiter.api.Test
     void inventoryExecute() {
         String tmp = inventory.execute();
@@ -92,6 +101,9 @@ public class Tests {
 
 
 
+    /**
+     * Tests the movement command execution.
+     */
     @org.junit.jupiter.api.Test
     void rightMovementExecute() {
         String tmp = right.execute();
@@ -100,6 +112,9 @@ public class Tests {
 
 
 
+    /**
+     * Tests the pick up command execution.
+     */
     @org.junit.jupiter.api.Test
     void pickUpExecute() {
         String tmp = pickUp.executeForTest(1);
@@ -108,6 +123,9 @@ public class Tests {
 
 
 
+    /**
+     * Tests the command manager's execution of commands.
+     */
     @org.junit.jupiter.api.Test
     void commandManagerExecute() {
         String tmp = commandManager.executeCommand('I');
@@ -116,6 +134,9 @@ public class Tests {
 
 
 
+    /**
+     * Tests adding an item to the character's loot.
+     */
     @org.junit.jupiter.api.Test
     void addToLootTest() {
         String tmp = player.addToLoot(1, "klada", data);

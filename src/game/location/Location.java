@@ -33,6 +33,10 @@ public class Location {
     public Location() {
     }
 
+    /**
+     * Sets side characters for this location using game data.
+     * @param gameData game data for looking up characters
+     */
     public void setScs(GameData gameData) {
         scs = new ArrayList<>();
         if(characters == null){
@@ -44,85 +48,106 @@ public class Location {
     }
 
 
+
     public String getId() {
         return id;
     }
+
 
     public void setId(String id) {
         this.id = id;
     }
 
+
     public String getName() {
         return name;
     }
+
 
     public void setName(String name) {
         this.name = name;
     }
 
+
     public ArrayList<String> getCharacters() {
         return characters;
     }
+
 
     public void setCharacters(ArrayList<String> characters) {
         this.characters = characters;
     }
 
+
     public String getUp() {
         return up;
     }
+
 
     public void setUp(String up) {
         this.up = up;
     }
 
+
     public String getDown() {
         return down;
     }
+
 
     public void setDown(String down) {
         this.down = down;
     }
 
+
     public String getLeft() {
         return left;
     }
+
 
     public void setLeft(String left) {
         this.left = left;
     }
 
+
     public String getRight() {
         return right;
     }
+
 
     public void setRight(String right) {
         this.right = right;
     }
 
+
     public ArrayList<SC> getScs() {
         return scs;
     }
+
 
     public String getWeapon() {
         return weapon;
     }
 
+
     public void setWeapon(String weapon) {
         this.weapon = weapon;
     }
+
 
     public String getArmor() {
         return armor;
     }
 
+
     public void setArmor(String armor) {
         this.armor = armor;
     }
 
+
     public String getPotion() {
         return potion;
     }
+
 
     public void setPotion(String potion) {
         this.potion = potion;

@@ -13,6 +13,10 @@ public class DownCommand implements Command {
         this.data = data;
     }
 
+    /**
+     * Executes the command to move the player down.
+     * @return result message
+     */
     @Override
     public String execute() {
         Location l = data.findLocation(player.getLocationNow());

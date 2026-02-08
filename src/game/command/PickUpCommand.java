@@ -16,6 +16,12 @@ public class PickUpCommand implements Command {
         this.gameData = gameData;
     }
 
+    /**
+     * Executes the pick up item command at the player's current location.
+     * The method checks if items (weapon, armor, potion) are available in the location.
+     * If so, it lists them and prompts the player to choose one using numeric input.
+     * @return result message of the action.
+     */
     @Override
     public String execute() {
         String temp = "";
@@ -62,6 +68,11 @@ public class PickUpCommand implements Command {
         }
         return temp;
     }
+    /**
+     * Executes the pickup command for testing purposes with a predefined choice.
+     * @param num the choice made (1-4)
+     * @return result message
+     */
     public String executeForTest(int num) {
         String temp = "";
         boolean x = true;

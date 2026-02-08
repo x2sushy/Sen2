@@ -14,6 +14,10 @@ public class UpCommand implements Command {
         this.data = data;
     }
 
+    /**
+     * Executes the command to move the player up.
+     * @return result message
+     */
     @Override
     public String execute() {
         Location l = data.findLocation(player.getLocationNow());

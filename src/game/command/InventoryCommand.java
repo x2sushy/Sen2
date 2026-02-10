@@ -14,7 +14,7 @@ public class InventoryCommand implements Command {
     }
 
     /**
-     * Executes the command to display the player's inventory.
+     * Executes the command to print the player's inventory.
      * @return string containing the list of items in the inventory
      */
     @Override

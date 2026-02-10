@@ -19,7 +19,6 @@ public class Tests {
 
     private Location location;
     private Location location2;
-    private GameData gameData;
     private GameData data;
     private DialogCommand dialog;
     private InventoryCommand inventory;

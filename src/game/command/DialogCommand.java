@@ -15,6 +15,10 @@ public class DialogCommand implements Command {
         this.gameData = gameData;
     }
 
+    /**
+     * Executes the dialog command, attempting to speak with an NPC in the current location.
+     * @return NPC dialog text or message if no one is present
+     */
     @Override
     public String execute() {
         try {

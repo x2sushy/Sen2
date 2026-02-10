@@ -13,6 +13,9 @@ public class Game {
     private CommandManager commandManager;
     private GameData data;
 
+    /**
+     * Initializes the game by loading data and setting up commands.
+     */
     public Game() {
         data = GameData.loadGameDataFromResources("/gameData.json");
         data.getLocations().forEach((k,v)->{
@@ -31,14 +34,19 @@ public class Game {
         commandManager.registerCommand('q', new DialogCommand(data.getPlayer(), data));
     }
 
+
     public CommandManager getCommandManager() {
         return commandManager;
     }
+
 
     public Scanner getScanner() {
         return scanner;
     }
 
+    /**
+     * Starts and runs the main game loop.
+     */
     public void run(){
         boolean exit = true;
         //todo uvod do hry

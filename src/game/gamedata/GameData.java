@@ -1,6 +1,5 @@
 package game.gamedata;
 
-import game.Main;
 import game.character.MC;
 import game.character.SC;
 import com.google.gson.Gson;
@@ -69,6 +68,12 @@ public class GameData {
         throw new IllegalArgumentException("Neexistuje lokace s id: " + id);
     }
 
+    /**
+     * Retrieves a weapon by its identifier.
+     * @param id weapon identifier
+     * @return the weapon
+     * @throws NullPointerException if no weapon with the given ID exists
+     */
     public Weapons getWeapon(String id) {
         Weapons weapon = weapons.get(id);
         if(weapon == null) {
@@ -77,6 +82,12 @@ public class GameData {
         return weapon;
     }
 
+    /**
+     * Retrieves armor by its identifier.
+     * @param id armor identifier
+     * @return the armor
+     * @throws NullPointerException if no armor with the given ID exists
+     */
     public Armor getArmor(String id) {
         Armor armor = armors.get(id);
         if(armor == null) {
@@ -85,6 +96,12 @@ public class GameData {
         return armor;
     }
 
+    /**
+     * Retrieves a potion by its identifier.
+     * @param id potion identifier
+     * @return the potion
+     * @throws NullPointerException if no potion with the given ID exists
+     */
     public Potions getPotion(String id) {
         Potions potion = potions.get(id);
         if(potion == null) {
@@ -93,20 +110,52 @@ public class GameData {
         return potion;
     }
 
+    /**
+     * Retrieves an other item (curse) by its identifier.
+     * @param id item identifier
+     * @return the item
+     * @throws NullPointerException if no item with the given ID exists
+     */
     public OtherItems getCurse(String id) {
         OtherItems cur = curses.get(id);
-        if(curses == null) {
+        if(cur == null) {
             throw new NullPointerException("žádný předmět nemá toto id");
         }
         return cur;
     }
 
+    /**
+     * Retrieves a side character by its identifier.
+     * @param id character identifier
+     * @return the side character
+     * @throws NullPointerException if no character with the given ID exists
+     */
     public SC getSC(String id) {
         SC sc = sideCharacters.get(id);
         if(sc == null) {
             throw new NullPointerException("žádný charakter neodpovídá tomuto id");
         }
         return sc;
+    }
+
+    /**
+     * Sets up the game data for testing.
+     * @param player the player
+     * @param weapons map of weapons
+     * @param armors map of armors
+     * @param potions map of potions
+     * @param locations map of locations
+     * @param curses map of other items
+     * @param sideCharacters map of side characters
+     */
+    public void setUpForTesting(MC player, HashMap<String, Weapons> weapons, HashMap<String, Armor> armors, HashMap<String, Potions> potions, HashMap<String, Location> locations, HashMap<String, OtherItems> curses, HashMap<String, SC> sideCharacters) {
+        this.player = player;
+        this.weapons = weapons;
+        this.armors = armors;
+        this.potions = potions;
+        this.locations = locations;
+        this.curses = curses;
+        this.sideCharacters = sideCharacters;
     }
 
 

@@ -15,6 +15,12 @@ public class Character {
     public Character() {
     }
 
+    /**
+     * Handles the attack logic between a player and an enemy.
+     * @param data game data
+     * @param enemy the enemy character
+     * @param game the current game instance
+     */
     public void attack(GameData data, SC enemy, Game game) {
         do {
             int temp = 0;
@@ -66,37 +72,45 @@ public class Character {
                     }
                 }
             }
-        }while (health > 0 && enemy.getHealth() > 0);
+        }while (enemy.getHealth() > 0);
         System.out.println("zabil jsi: " + enemy.getName());
     }
+
 
     public String getId() {
         return id;
     }
 
+
     public void setId(String id) {
         this.id = id;
     }
+
 
     public int getHealth() {
         return health;
     }
 
+
     public void setHealth(int health) {
         this.health = health;
     }
+
 
     public String getName() {
         return name;
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
 
+
     public ArrayList<String> getLoot() {
         return loot;
     }
+
 
     public void setLoot(ArrayList<String> loot) {
         this.loot = loot;

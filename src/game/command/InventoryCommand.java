@@ -13,6 +13,10 @@ public class InventoryCommand implements Command {
         this.gameData = gameData;
     }
 
+    /**
+     * Executes the command to display the player's inventory.
+     * @return string containing the list of items in the inventory
+     */
     @Override
     public String execute() {
         String loot = "";

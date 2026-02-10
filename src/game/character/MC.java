@@ -7,17 +7,27 @@ public class MC extends Character{
     private String locationNow;
     private boolean curse = false;
 
+
     public MC() {
     }
+
 
     public String getLocationNow() {
         return locationNow;
     }
 
+
     public void setLocationNow(String locationNow) {
         this.locationNow = locationNow;
     }
 
+    /**
+     * Adds an item to the player's loot.
+     * @param index type of item (1: Weapon, 2: Armor, 3: Potion)
+     * @param item item ID to add
+     * @param gameData game data for lookup
+     * @return result message
+     */
     public String addToLoot(int index, String item, GameData gameData) {
         String temp = "";
         switch (index) {
@@ -50,9 +60,11 @@ public class MC extends Character{
     }
 
 
+
     public boolean HasCurse() {
         return curse;
     }
+
 
     public void setHasCurse(boolean hasCurse) {
         this.curse = hasCurse;

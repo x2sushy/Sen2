@@ -5,6 +5,9 @@ import game.command.*;
 import game.gamedata.GameData;
 import game.location.Location;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Game {
@@ -49,7 +52,14 @@ public class Game {
      */
     public void run(){
         boolean exit = true;
-        //todo uvod do hry
+        try(BufferedReader br = new BufferedReader(new FileReader("resource/start.txt"))) {
+            String line = "";
+            while((line = br.readLine())!=null){
+                System.out.println(line);
+            }
+        }catch (IOException e){
+            System.out.println("problém se souborem");
+        }
         while(exit){
             if (!data.findLocation(player.getLocationNow()).getCharacters().isEmpty()) {
                 if (data.findLocation(player.getLocationNow()).getCharacters() != null && !data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).isFriendly()) {

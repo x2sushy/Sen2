@@ -1,5 +1,3 @@
-package tests;
-
 import game.character.MC;
 import game.character.SC;
 import game.command.*;

@@ -98,7 +98,14 @@ public class Game {
             c = Character.toLowerCase(c);
             System.out.println(commandManager.executeCommand(c));
             if (player.getLocationNow().equals("princezninPalac") && player.HasCurse()){
-                //todo konecny vypis pribehu
+                try(BufferedReader br = new BufferedReader(new FileReader("resource/end.txt"))) {
+                    String line = "";
+                    while((line = br.readLine())!=null){
+                        System.out.println(line);
+                    }
+                }catch (IOException e){
+                    System.out.println("problém se souborem");
+                }
                 exit = false;
             }
         }

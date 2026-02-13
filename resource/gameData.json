@@ -4,15 +4,17 @@
     "basicSword2": { "id": "basicSword2", "name": "meč", "damage": 12 },
     "basicSword3": { "id": "basicSword3", "name": "meč", "damage": 14 },
     "basicSword4": { "id": "basicSword4", "name": "meč", "damage": 16 },
-    "betterSword": { "id": "betterSword", "name": "lepší meč", "damage": 100 },
-    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 10 }
+    "betterSword": { "id": "betterSword", "name": "lepší meč", "damage": 20 },
+    "magicWand": { "id": "magicWand", "name": "magická hůlka", "damage": 20 },
+    "bloodthirster": { "id": "bloodthirster", "name": "Krvežíznivec", "damage": 20000}
   },
   "armors": {
     "basicArmor1": { "id": "basicArmor1", "name": "brnění", "reduction": 1 },
     "basicArmor2": { "id": "basicArmor2", "name": "brnění", "reduction": 2 },
     "basicArmor3": { "id": "basicArmor3", "name": "brnění", "reduction": 3 },
     "basicArmor4": { "id": "basicArmor4", "name": "brnění", "reduction": 4 },
-    "betterArmor": { "id": "betterArmor", "name": "lepší brnění", "reduction": 10 }
+    "betterArmor": { "id": "betterArmor", "name": "lepší brnění", "reduction": 10 },
+    "krvavebrneni": { "id": "krvavebrneni", "name": "Vládcovo Krvavé Brnění", "reduction": -5}
   },
   "potions": {
     "potion": { "id": "potion", "name": "elixír", "health": 20 }
@@ -78,7 +80,7 @@
     "pekelneUdoli": {
       "id": "pekelneUdoli",
       "name": "Pekelné Údolí",
-      "characters": [],
+      "characters": ["malevola"],
       "weapon" : null,
       "armor" : null,
       "potion" : null,
@@ -107,7 +109,8 @@
     "herold": { "id": "herold", "name": "Herold", "health": 100, "isFriendly": true, "loot": ["basicSword1", "basicArmor1", "potion"], "dialog": "Buď zdráv, hrdino! Pro začátek bych ti doporučil jít v pravo." },
     "franc": { "id": "franc", "name": "Franc", "health": 150, "isFriendly": true, "loot": ["betterSword", "betterArmor", "potion"], "dialog": "V mé jeskyni najdeš sílu, kterou hledáš." },
     "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": [], "dialog": "Děkuji, že jsi mě zachránil! Už jsem ztrácela naději." },
-    "kronos": { "id": "kronos", "name": "Kronos", "health": 100, "isFriendly": false, "loot": ["magicWand", "betterArmor", "potion", "curse"], "dialog": null }
+    "kronos": { "id": "kronos", "name": "Kronos", "health": 100, "isFriendly": false, "loot": ["magicWand", "betterArmor", "potion", "curse"], "dialog": null },
+    "malevola": { "id":  "malevola", "name": "Malevola", "health": 1, "isFriendly": true, "loot": ["bloodthirster", "krvavebrneni"], "dialog": null}
   },
   "player": {
     "id": "hrac",

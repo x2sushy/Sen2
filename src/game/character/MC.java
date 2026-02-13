@@ -31,7 +31,7 @@ public class MC extends Character{
     public String addToLoot(int index, String item, GameData gameData) {
         String temp = "";
         switch (index) {
-            case 1 -> {if (loot.size() < 5) {
+            case 1 -> {if (loot.size() < 6) {
                 loot.remove(index-1);
                 loot.add(index-1, item);
                 temp = "sebral jsi: " + gameData.getWeapon(item).getName();
@@ -39,7 +39,7 @@ public class MC extends Character{
                 temp = "máš plný inventář";
                 }
             }
-            case 2 -> {if (loot.size() < 5) {
+            case 2 -> {if (loot.size() < 6) {
                 loot.remove(index-1);
                 loot.add(index-1, item);
                 temp = "sebral jsi: " + gameData.getArmor(item).getName();

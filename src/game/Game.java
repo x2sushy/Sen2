@@ -80,7 +80,14 @@ public class Game {
                                 System.out.println("Jeden z elfů říká: Pokud hledáš způsob jak zachránit princeznu, najdi Kronose v jeho sídle. To sídlo se nachází na západ od Paseky.");
                             }
                             case "enemy6" -> {
-                                //todo dodelat co se stane v lese
+                                try(BufferedReader br = new BufferedReader(new FileReader("resource/les.txt"))) {
+                                    String line = "";
+                                    while((line = br.readLine())!=null){
+                                        System.out.println(line);
+                                    }
+                                }catch (IOException e){
+                                    System.out.println("problém se souborem");
+                                }
                             }
                             default -> {
                             }

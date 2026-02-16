@@ -17,9 +17,10 @@ public class Character {
 
     /**
      * Handles the attack logic between a player and an enemy.
-     * @param data game data
+     *
+     * @param data  game data
      * @param enemy the enemy character
-     * @param game the current game instance
+     * @param game  the current game instance
      */
     public void attack(GameData data, SC enemy, Game game) {
         do {
@@ -49,7 +50,7 @@ public class Character {
                         if (enemy.getHealth() > 0) {
                             health = health - data.getWeapon(enemy.getLoot().getFirst()).use(this, data);
                             System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(this, data) + " životů");
-                        }else {
+                        } else {
                             enemy.setHealth(0);
                         }
                         System.out.println(enemy);
@@ -72,8 +73,10 @@ public class Character {
                     }
                 }
             }
-        }while (enemy.getHealth() > 0);
-        System.out.println("zabil jsi: " + enemy.getName());
+        } while (enemy.getHealth() > 0 && health > 0);
+        if (health > 0) {
+            System.out.println("zabil jsi: " + enemy.getName());
+        }
     }
 
 

@@ -106,7 +106,7 @@
     "enemy7": { "id": "enemy7", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"], "dialog": null },
     "enemy8": { "id": "enemy8", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"], "dialog": null },
     "enemy9": { "id": "enemy9", "name": "temný elf", "health": 100, "isFriendly": false, "loot": ["basicSword4", "basicArmor4", "potion"], "dialog": null },
-    "herold": { "id": "herold", "name": "Herold", "health": 100, "isFriendly": true, "loot": ["basicSword1", "basicArmor1", "potion"], "dialog": "Buď zdráv, hrdino! Pro začátek bych ti doporučil jít v pravo." },
+    "herold": { "id": "herold", "name": "Herold", "health": 100, "isFriendly": true, "loot": ["basicSword1", "basicArmor1", "potion"], "dialog": "Buď zdráv, hrdino! Pro začátek bych ti doporučil jít v pravo. Pokud půjdeš v levo, tak jdeš na jistou smrt." },
     "franc": { "id": "franc", "name": "Franc", "health": 150, "isFriendly": true, "loot": ["betterSword", "betterArmor", "potion"], "dialog": "V mé jeskyni najdeš sílu, kterou hledáš." },
     "princezna": { "id": "princezna", "name": "Princezna", "health": 100, "isFriendly": true, "loot": [], "dialog": "Děkuji, že jsi mě zachránil! Už jsem ztrácela naději." },
     "kronos": { "id": "kronos", "name": "Kronos", "health": 100, "isFriendly": false, "loot": ["magicWand", "betterArmor", "potion", "curse"], "dialog": null },

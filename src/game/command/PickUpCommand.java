@@ -29,9 +29,9 @@ public class PickUpCommand implements Command {
         int num = 0;
         if (gameData.findLocation(player.getLocationNow()).getWeapon() != null && gameData.findLocation(player.getLocationNow()).getArmor() != null && gameData.findLocation(player.getLocationNow()).getPotion() != null) {
             while (x) {
-                System.out.println("můžeš si vzít jenom jednu věc, když dáš 4 tak si nevezmeš nic a předměty zůstanou v lokaci" + "\n" + gameData.getWeapon(gameData.findLocation(player.getLocationNow()).getWeapon()).getName() +
-                        ", " + gameData.getArmor(gameData.findLocation(player.getLocationNow()).getArmor()).getName() +
-                        ", " + gameData.getPotion(gameData.findLocation(player.getLocationNow()).getPotion()).getName());
+                System.out.println("můžeš si vzít jenom jednu věc, když dáš 4 tak si nevezmeš nic a předměty zůstanou v lokaci" + "\n" + "1) " + gameData.getWeapon(gameData.findLocation(player.getLocationNow()).getWeapon()).toString() +
+                        ", " + "2) " + gameData.getArmor(gameData.findLocation(player.getLocationNow()).getArmor()).toString() +
+                        ", " + "3) " + gameData.getPotion(gameData.findLocation(player.getLocationNow()).getPotion()).toString());
 
                 try {
                     num = Integer.parseInt(sc.next());

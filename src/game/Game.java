@@ -53,6 +53,7 @@ public class Game {
     public void run(){
         boolean exit = true;
         boolean egg = false;
+        boolean temp = true;
         try(BufferedReader br = new BufferedReader(new FileReader("resource/start.txt"))) {
             String line = "";
             while((line = br.readLine())!=null){
@@ -91,7 +92,9 @@ public class Game {
                                 }catch (IOException e){
                                     System.out.println("problém se souborem");
                                 }
+                                data.findLocation(player.getLocationNow()).getCharacters().clear();
                                 player.setLocationNow("francovaJeskyne");
+                                temp = false;
                             }
                             default -> {
                             }
@@ -99,16 +102,16 @@ public class Game {
                         data.findLocation(player.getLocationNow()).getCharacters().removeFirst();
                         i--;
                     }
+                    data.findLocation(player.getLocationNow()).getCharacters().clear();
                 }else{
-                    //todo easter egg
-                    if (data.findLocation("tajemnyLes").getCharacters()!=null && player.getLocationNow().equals("pekelneUdoli")){
+                    if (temp && player.getLocationNow().equals("pekelneUdoli")){
                         System.out.println("v lokaci se nachází: " + data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).getName() + '\n'
                                 + " Zdravím tě Hrdino, mám pro tebe nabídku. Výměnou za tvojí duši ti dám mnohem lepší vybavení. Meč, který zabije kohokoliv na jednu ránu, a brnění, které ti naopak bude dávat větší damage od nepřátel." + '\n' + " odpověz ano nebo ne");
                         boolean tmp = true;
                         String s;
                         while(tmp) {
                             System.out.print(">>");
-                            s = scanner.nextLine();
+                            s = scanner.nextLine().trim().toLowerCase();
                             if (s.equals("ano")){
                                 tmp = false;
                                 player.addToLoot(1, data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).getLoot().getFirst(), data);
@@ -125,7 +128,11 @@ public class Game {
                         }
                         egg = true;
                     }else {
-                        System.out.println("v lokaci se nachází: " + data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).getName());
+                        if(!egg && player.getLocationNow().equals("pekelneUdoli")){
+                            System.out.println("v lokaci nikdo není");
+                        }else {
+                            System.out.println("v lokaci se nachází: " + data.getSC(data.findLocation(player.getLocationNow()).getCharacters().getFirst()).getName());
+                        }
                     }
                 }
             }

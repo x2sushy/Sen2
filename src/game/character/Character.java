@@ -67,15 +67,22 @@ public class Character {
                         System.out.println(enemy.toString());
                     } else {
                         System.out.println(data.getPotion(loot.get(temp - 1)).use((MC) this));
-                        health = health - data.getWeapon(enemy.getLoot().getFirst()).use(this, data);
-                        System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(this, data) + " životů");
+                        loot.remove(temp - 1);
+//                        health = health - data.getWeapon(enemy.getLoot().getFirst()).use(this, data);
+//                        System.out.println(enemy.getName() + " ti ubral " + data.getWeapon(enemy.getLoot().getFirst()).use(this, data) + " životů");
                         System.out.println(enemy);
+                        System.out.println("tvoje životy: " + this.health);
                     }
                 }
             }
         } while (enemy.getHealth() > 0 && health > 0);
         if (health > 0) {
             System.out.println("zabil jsi: " + enemy.getName());
+            if (health + 60 <= 100) {
+                health = health + 60;
+            } else {
+                health = 100;
+            }
         }
     }
 

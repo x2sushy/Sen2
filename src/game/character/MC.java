@@ -48,7 +48,6 @@ public class MC extends Character{
                 }
             }
             case 3 -> {if (loot.size() < 5) {
-                loot.remove(index-1);
                 loot.addLast(item);
                 temp = "sebral jsi: " + gameData.getPotion(item).getName();
                 }else {

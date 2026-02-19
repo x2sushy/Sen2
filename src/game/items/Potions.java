@@ -32,10 +32,13 @@ public class Potions extends Item {
      */
     public String use(MC player) {
         if (player.getHealth() > 0) {
-            player.setHealth(player.getHealth() + health);
+            if (player.getHealth() + health >= 100) {
+                player.setHealth(100);
+            }else {
+                player.setHealth(player.getHealth() + health);
+            }
         } else{
-            System.out.println("jsi mrtvý");
-            System.exit(0);
+            return "";
         }
         return "přidal sis " + health + " životů";
     }

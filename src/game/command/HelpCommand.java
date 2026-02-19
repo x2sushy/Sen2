@@ -9,13 +9,18 @@ public class HelpCommand implements Command {
      */
     @Override
     public String execute() {
-        try(BufferedReader br = new BufferedReader(new FileReader("resource/help.txt"))) {
-            String line = "";
-            while((line = br.readLine())!=null){
-                System.out.println(line);
+        try (InputStream is = getClass().getResourceAsStream("/help.txt")) {
+            if (is == null) {
+                return "Soubor nebyl nalezen.";
             }
-        }catch (IOException e){
-            return "problém se souborem";
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(is, java.nio.charset.StandardCharsets.UTF_8))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+            }
+        } catch (IOException e) {
+            return "Problém se souborem.";
         }
         return "";
     }

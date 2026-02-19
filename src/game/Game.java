@@ -3,11 +3,8 @@ package game;
 import game.character.MC;
 import game.command.*;
 import game.gamedata.GameData;
-import game.location.Location;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Game {
@@ -54,13 +51,19 @@ public class Game {
         boolean exit = true;
         boolean egg = false;
         boolean temp = true;
-        try(BufferedReader br = new BufferedReader(new FileReader("resource/start.txt"))) {
-            String line = "";
-            while((line = br.readLine())!=null){
-                System.out.println(line);
+        try (InputStream is = getClass().getResourceAsStream("/start.txt")) {
+            if (is == null) {
+                System.out.println("Soubor start.txt nebyl nalezen v resources.");
+            } else {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(is, java.nio.charset.StandardCharsets.UTF_8))) {
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                }
             }
-        }catch (IOException e){
-            System.out.println("problém se souborem");
+        } catch (IOException e) {
+            System.out.println("Problém při čtení startovacího souboru.");
         }
         while(exit){
             if (!data.findLocation(player.getLocationNow()).getCharacters().isEmpty()) {
@@ -84,13 +87,18 @@ public class Game {
                                 System.out.println("Jeden z elfů říká: Pokud hledáš způsob jak zachránit princeznu, najdi Kronose v jeho sídle. To sídlo se nachází na západ od Paseky.");
                             }
                             case "enemy6" -> {
-                                try(BufferedReader br = new BufferedReader(new FileReader("resource/les.txt"))) {
-                                    String line = "";
-                                    while((line = br.readLine())!=null){
-                                        System.out.println(line);
+                                try (InputStream is = getClass().getResourceAsStream("/les.txt")) {
+                                    if (is == null) {
+                                        System.out.println("Soubor nebyl nalezen.");
                                     }
-                                }catch (IOException e){
-                                    System.out.println("problém se souborem");
+                                    try (BufferedReader br = new BufferedReader(new InputStreamReader(is, java.nio.charset.StandardCharsets.UTF_8))) {
+                                        String line;
+                                        while ((line = br.readLine()) != null) {
+                                            System.out.println(line);
+                                        }
+                                    }
+                                } catch (IOException e) {
+                                    System.out.println("Problém se souborem.");
                                 }
                                 data.findLocation(player.getLocationNow()).getCharacters().clear();
                                 player.setLocationNow("francovaJeskyne");
@@ -141,13 +149,18 @@ public class Game {
             c = Character.toLowerCase(c);
             System.out.println(commandManager.executeCommand(c));
             if (player.getLocationNow().equals("princezninPalac") && player.HasCurse()){
-                try(BufferedReader br = new BufferedReader(new FileReader("resource/end.txt"))) {
-                    String line = "";
-                    while((line = br.readLine())!=null){
-                        System.out.println(line);
+                try (InputStream is = getClass().getResourceAsStream("/end.txt")) {
+                    if (is == null) {
+                        System.out.println("Soubor nebyl nalezen.");
                     }
-                }catch (IOException e){
-                    System.out.println("problém se souborem");
+                    try (BufferedReader br = new BufferedReader(new InputStreamReader(is, java.nio.charset.StandardCharsets.UTF_8))) {
+                        String line;
+                        while ((line = br.readLine()) != null) {
+                            System.out.println(line);
+                        }
+                    }
+                } catch (IOException e) {
+                    System.out.println("Problém se souborem.");
                 }
                 exit = false;
             }
